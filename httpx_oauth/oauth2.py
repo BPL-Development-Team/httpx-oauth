@@ -72,7 +72,7 @@ class BaseOAuth2(Generic[T]):
         revoke_token_endpoint: Optional[str] = None,
         name: str = "oauth2",
         base_scopes: Optional[List[str]] = None,
-        extra_headers: Optional[Dict]] = {}
+        extra_headers: Optional[Dict] = {}
     ):
         self.client_id = client_id
         self.client_secret = client_secret
