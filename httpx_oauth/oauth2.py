@@ -72,6 +72,7 @@ class BaseOAuth2(Generic[T]):
         revoke_token_endpoint: Optional[str] = None,
         name: str = "oauth2",
         base_scopes: Optional[List[str]] = None,
+        extra_headers: Optional[Dict]] = {}
     ):
         self.client_id = client_id
         self.client_secret = client_secret
@@ -84,6 +85,7 @@ class BaseOAuth2(Generic[T]):
 
         self.request_headers = {
             "Accept": "application/json",
+            **extra_headers
         }
 
     async def get_authorization_url(
